@@ -391,7 +391,7 @@ def test_resume_outside_lease_fails_closed(durable_history):
 
 def test_native_desktop_resume_then_normal_tool_flush_remains_anchored(durable_history):
     from agent.replay_cleanup import sanitize_replay_history
-    from tests.run_agent.test_cross_process_turn_lease import _flush_agent
+    from tests.agent.test_cross_process_turn_lease import _flush_agent
 
     db, agent, _ = durable_history
     history, _ = db.get_resume_conversations("s1")
@@ -423,7 +423,7 @@ def test_native_desktop_resume_then_normal_tool_flush_remains_anchored(durable_h
 
 
 def test_caller_seed_marked_persisted_without_row_id_is_not_inferred(durable_history):
-    from tests.run_agent.test_cross_process_turn_lease import _flush_agent
+    from tests.agent.test_cross_process_turn_lease import _flush_agent
 
     db, agent, history = durable_history
     seed = {"role": "developer", "content": "caller-only seed"}
